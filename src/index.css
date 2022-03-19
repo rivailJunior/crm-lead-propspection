@@ -7,6 +7,7 @@ p {
   list-style: none;
   font-size: 1.2rem;
   font-family: Arial;
+  box-sizing: border-box;
 }
 
 a {
