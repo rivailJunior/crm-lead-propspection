@@ -10,4 +10,9 @@ describe("Request Service", () => {
     const result = await get("/todos", null);
     expect(result).toEqual(todosFixtures);
   });
+
+  it("should return error reject", async () => {
+    axiosMock.onGet("/todos").reply(500);
+    await expect(get("/todos", null)).rejects.toThrow();
+  });
 });
