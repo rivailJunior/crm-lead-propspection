@@ -1,3 +1,11 @@
+import "../src/index.css";
+
+export const decorators = [
+  (Story, { globals }) => {
+    return <Story />;
+  },
+];
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,4 +14,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
