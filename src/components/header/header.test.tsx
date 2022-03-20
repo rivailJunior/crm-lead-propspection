@@ -5,7 +5,7 @@ describe("Header Component", () => {
   test("should render header properly", () => {
     render(<Header />);
 
-    expect(screen.getByAltText("Addi")).toBeInTheDocument();
-    expect(screen.getByText("Rivail Santos")).toBeInTheDocument();
+    expect(screen.getByAltText(/Addi/i)).toBeInTheDocument();
+    expect(screen.getByText(/Rivail Santos/i)).toBeInTheDocument();
   });
 });

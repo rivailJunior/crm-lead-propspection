@@ -18,6 +18,6 @@ describe("Container", () => {
         })}
       </Container>
     );
-    expect(screen.getAllByText("box")).toHaveLength(10);
+    expect(screen.getAllByText(/box/i)).toHaveLength(10);
   });
 });

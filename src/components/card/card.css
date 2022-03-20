@@ -1,0 +1,29 @@
+.card {
+  position: absolute;
+  min-width: 285px;
+  max-height: 106px;
+  background: rgba(244, 244, 244, 0.32);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.card > .title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: #8f8f8f;
+}
+
+.card > .body {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: #8f8f8f;
+}
