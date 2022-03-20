@@ -1,6 +1,5 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import List, { ListItem } from "./Index";
+import { Text, List, ListItem } from "../Index";
 
 export default {
   title: "Componentes/List",
@@ -19,7 +18,9 @@ const ListChilds = () => {
       {boxItems.map((item, id) => {
         return (
           <ListItem>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            <Text>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            </Text>
           </ListItem>
         );
       })}
