@@ -13,7 +13,9 @@ export default function Leads() {
   return (
     <Container>
       <ContainerRow>
-        <Text className={css.textLeads}>Leads</Text>
+        <div className="box">
+          <Text className={css.textLeads}>Leads</Text>
+        </div>
       </ContainerRow>
       <ContainerRow>
         <div className="box">
