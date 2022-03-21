@@ -1,12 +1,15 @@
-.container {
-  max-width: 800vw;
+.container-row {
+  max-width: 80%;
   display: flex;
   flex-wrap: wrap;
-  background-color: beige;
   margin: 0 auto;
 }
 
-.container > .box {
+.container-row > .box {
   flex: 1 1 200px;
   margin: 10px;
+}
+
+.container {
+  margin: 3rem;
 }

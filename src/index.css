@@ -23,3 +23,7 @@ a {
 .default {
   background-color: #4e7eff !important;
 }
+
+body {
+  background-color: #f4f4f4;
+}

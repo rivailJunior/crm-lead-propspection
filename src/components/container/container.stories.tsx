@@ -1,14 +1,14 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import Container from "./Index";
+import ContainerRow from "./Index";
 
 export default {
-  title: "Componentes/Container",
-  component: Container,
-} as ComponentMeta<typeof Container>;
+  title: "Componentes/ContainerRow",
+  component: ContainerRow,
+} as ComponentMeta<typeof ContainerRow>;
 
-const Template: ComponentStory<typeof Container> = (args) => (
-  <Container {...args} />
+const Template: ComponentStory<typeof ContainerRow> = (args) => (
+  <ContainerRow {...args} />
 );
 
 const Component = ({ styles }: any) => (
@@ -27,7 +27,7 @@ const Component = ({ styles }: any) => (
 
 export const Default = Template.bind({});
 
-const ContainerChilds = () => {
+const ContainerRowChilds = () => {
   const boxItems = Array(9).fill(null);
 
   return (
@@ -40,5 +40,5 @@ const ContainerChilds = () => {
 };
 
 Default.args = {
-  children: [<ContainerChilds />],
+  children: [<ContainerRowChilds />],
 };

@@ -1,30 +1,29 @@
-import React from "react";
 import "./list.css";
 
 type IList = {
-  children: JSX.Element | Array<JSX.Element>;
+  children?: JSX.Element | Array<JSX.Element>;
 };
 
 export default function List({ children }: IList) {
   return (
-    <ul role="list" className="list">
-      {React.Children.map(children, (item) => {
-        return item;
-      })}
-    </ul>
+    // eslint-disable-next-line jsx-a11y/no-redundant-roles
+    <div role="list" className="list">
+      {children}
+    </div>
   );
 }
 
 type IItem = {
-  children: string | JSX.Element;
+  children?: string | JSX.Element;
   onClick?: void;
 };
 
 export const ListItem = ({ children, onClick }: IItem) => {
   const handleOnClick = onClick || function () {};
   return (
-    <li role="listItem" className="listItem" onClick={handleOnClick}>
+    // eslint-disable-next-line jsx-a11y/aria-role
+    <div role="listItem" className="listItem" onClick={handleOnClick}>
       {children}
-    </li>
+    </div>
   );
 };
