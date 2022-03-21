@@ -8,9 +8,15 @@ import {
 } from "../../components/Index";
 import useUsers from "../../hooks/useUsers";
 import css from "./leads.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Leads() {
-  const { loading, error, users } = useUsers();
+  // loading, error,
+  const { users } = useUsers();
+  const navigate = useNavigate();
+  const handleClickUser = (userId: string) => {
+    navigate(`/user/${userId}`);
+  };
   return (
     <Container>
       <ContainerRow>
@@ -33,7 +39,7 @@ export default function Leads() {
           <List>
             {users?.map((user, _index) => {
               return (
-                <ListItem key={_index}>
+                <ListItem key={_index} onClick={() => handleClickUser(user.id)}>
                   <Text>{user.name}</Text>
                 </ListItem>
               );

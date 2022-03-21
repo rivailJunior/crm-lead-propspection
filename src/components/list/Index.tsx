@@ -15,7 +15,7 @@ export default function List({ children }: IList) {
 
 type IItem = {
   children?: string | JSX.Element;
-  onClick?: void;
+  onClick?: () => void;
 };
 
 export const ListItem = ({ children, onClick }: IItem) => {
