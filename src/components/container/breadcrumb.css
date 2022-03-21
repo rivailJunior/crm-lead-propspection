@@ -1,0 +1,7 @@
+.active {
+  color: var(--default-text-color);
+}
+
+.disabled {
+  color: var(--default-blue-color);
+}

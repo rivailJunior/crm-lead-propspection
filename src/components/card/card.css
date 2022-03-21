@@ -2,7 +2,7 @@
   position: absolute;
   min-width: 285px;
   max-height: 106px;
-  background: rgba(244, 244, 244, 0.32);
+  background: var(--card-color);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 15px;
@@ -13,9 +13,8 @@
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 15px;
   letter-spacing: 0.05em;
-  color: #8f8f8f;
+  color: var(--default-text-color);
 }
 
 .card > .body {
@@ -23,7 +22,10 @@
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
-  line-height: 20px;
   letter-spacing: 0.05em;
-  color: #8f8f8f;
+  color: var(--default-text-color);
+}
+
+.card > .text {
+  line-height: 20px !important;
 }

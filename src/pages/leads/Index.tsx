@@ -1,4 +1,5 @@
 import {
+  BreadCrumb,
   Container,
   ContainerRow,
   List,
@@ -12,6 +13,16 @@ export default function Leads() {
   const { loading, error, users } = useUsers();
   return (
     <Container>
+      <ContainerRow>
+        <div className="box">
+          <BreadCrumb
+            data={[
+              { label: "home", onClick: () => {}, active: false },
+              { label: "leads", onClick: () => {}, active: true },
+            ]}
+          />
+        </div>
+      </ContainerRow>
       <ContainerRow>
         <div className="box">
           <Text className={css.textLeads}>Leads</Text>

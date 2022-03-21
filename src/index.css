@@ -16,14 +16,25 @@ a {
   text-decoration: none;
 }
 
+:root {
+  --default-white-color: #f4f4f4;
+  --default-blue-color: #4e7eff;
+  --default-success-color: rgba(56, 251, 88, 0.32);
+  --default-text-color: #8f8f8f;
+  --dark-text-color: #302d2d;
+  --card-color: rgba(244, 244, 244, 0.32);
+  --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  --line-color: #d8d8d8;
+}
+
 .success {
-  background-color: rgba(56, 251, 88, 0.32) !important;
+  background-color: var(--default-success-color) !important;
 }
 
 .default {
-  background-color: #4e7eff !important;
+  background-color: var(--default-blue-color) !important;
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: var(--default-white-color);
 }

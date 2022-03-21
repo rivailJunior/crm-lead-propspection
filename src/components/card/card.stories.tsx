@@ -55,7 +55,12 @@ export const CardText = Template.bind({});
 
 CardText.args = {
   body: (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <Text>Fernando Silva. Fernandinho</Text>
       <Text>fernando@gmail.com</Text>
       <Text>Fê Silva & CO</Text>

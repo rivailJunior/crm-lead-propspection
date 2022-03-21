@@ -9,3 +9,5 @@ export { ListItem };
 export { default as Header } from "./header/Index";
 
 export { default as Card } from "./card/Index";
+
+export { default as BreadCrumb } from "./container/bread-crumb";

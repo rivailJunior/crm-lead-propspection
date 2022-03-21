@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  background-color: #4e7eff;
-  color: white;
+  background-color: var(--default-blue-color);
+  color: var(--default-white-color);
   height: 80px;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .header div a {
-  color: white;
+  color: var(--default-white-color);
   padding: 10px;
 }
 
