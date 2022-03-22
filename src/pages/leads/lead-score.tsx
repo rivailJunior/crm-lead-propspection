@@ -10,7 +10,7 @@ import useUserProspection from "../../hooks/useProspection";
 import css from "./user.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Lead() {
+export default function LeadScore() {
   const navigate = useNavigate();
   const params = useParams();
   const { userData, score, loading } = useUserProspection(params.userid);

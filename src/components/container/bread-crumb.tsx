@@ -19,7 +19,9 @@ export default function BreadCrumb({ data }: IBreadCrumb) {
           <Text
             key={index}
             onClick={() => item.onClick(item.label)}
-            className={item.active ? "active" : "disabled"}
+            className={
+              item.active ? "small-text active " : "small-text disabled "
+            }
           >
             {label}
           </Text>

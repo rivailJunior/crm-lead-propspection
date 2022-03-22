@@ -49,6 +49,5 @@ export default function useUserProspection(
   useEffect(() => {
     doUserCheck();
   }, [doUserCheck]);
-  console.log("loading", loading);
   return { userData, score, doUserCheck, loading, error };
 }
