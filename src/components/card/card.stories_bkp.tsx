@@ -32,7 +32,7 @@ const Component = () => {
 
 ScoreDefault.args = {
   title: <Text styles={{ color: "black" }}>Lead Score</Text>,
-  body: (
+  children: (
     <div>
       <Component />
     </div>
@@ -43,7 +43,7 @@ export const ScoreSuccess = Template.bind({});
 
 ScoreSuccess.args = {
   title: <Text styles={{ color: "black" }}>Lead Score</Text>,
-  body: (
+  children: (
     <div style={{ color: "black" }}>
       <Component />
     </div>
@@ -54,7 +54,7 @@ ScoreSuccess.args = {
 export const CardText = Template.bind({});
 
 CardText.args = {
-  body: (
+  children: (
     <div
       style={{
         display: "flex",
@@ -73,7 +73,7 @@ CardText.args = {
 export const CardTextSuccess = Template.bind({});
 
 CardTextSuccess.args = {
-  body: (
+  children: (
     <div style={{ display: "flex", flexDirection: "column", color: "black" }}>
       <Text>Fernando Silva. Fernandinho</Text>
       <Text>fernando@gmail.com</Text>

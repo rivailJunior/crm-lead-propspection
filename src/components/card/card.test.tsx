@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Text, Card } from "../Index";
+import { Card } from "../Index";
 
 const Component = () => {
   return (
@@ -22,7 +22,11 @@ const Component = () => {
 
 describe("Card Component", () => {
   test("should render card properly", () => {
-    render(<Card title="Lead Score" body={<Component />} />);
+    render(
+      <Card title="Lead Score">
+        <Component />
+      </Card>
+    );
 
     expect(screen.getByText(/Lead Score/i)).toBeInTheDocument();
 

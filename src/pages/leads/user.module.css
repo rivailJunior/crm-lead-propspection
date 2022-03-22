@@ -1,7 +1,6 @@
 .userContainer {
   background-color: var(--default-white-color);
   width: 100%;
-  height: 100%;
   box-shadow: var(--box-shadow);
   display: grid;
 }
@@ -10,20 +9,45 @@
   min-height: 500px;
 }
 
-.end {
-  justify-content: flex-end;
-  align-items: center;
-}
-
 .start {
+  display: flex;
   justify-self: flex-start;
   align-items: center;
 }
 
-.cardStart {
-  margin-left: 10%;
+.card {
+  width: 80%;
 }
 
-.cardEnd {
-  margin-right: 10%;
+.score {
+  width: 100%;
+  height: 100px;
+  justify-content: "center";
+  align-items: "center";
+  display: "flex";
+  flex-direction: "row";
+  font-size: 60px;
+  letter-spacing: 0.5;
+}
+
+@media (min-width: 768px) {
+  .end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+@media (min-width: 992px) {
+  .end {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+@media (min-width: 1200px) {
+  .end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }

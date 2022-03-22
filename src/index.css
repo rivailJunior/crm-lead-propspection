@@ -39,3 +39,12 @@ a {
 body {
   background-color: var(--body-color);
 }
+
+.small-text {
+  font-size: 15px !important;
+}
+
+hr {
+  border-bottom: -0.5px solid var(--default-text-color);
+  width: 40%;
+}

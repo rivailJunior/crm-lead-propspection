@@ -1,7 +1,7 @@
 .card {
-  position: absolute;
   min-width: 285px;
-  max-height: 106px;
+  max-width: 400px;
+  max-height: 250px;
   background: var(--card-color);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
