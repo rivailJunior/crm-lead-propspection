@@ -7,9 +7,9 @@ export default function Error() {
       <div className="box">
         <div className={css.erroContainer}>
           <h1 className={css.mainText}>404</h1>
-          <h3 className={css.mainText} style={{ fontSize: 50 }}>
+          <div className={css.mainText} style={{ fontSize: 50 }}>
             Sorry. Page not found.
-          </h3>
+          </div>
           <Link to="/" className={css.link}>
             Back Home
           </Link>
