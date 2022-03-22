@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
+  width: 100%;
 }
 
 .container-row > .box {
@@ -11,4 +12,5 @@
 
 .container {
   padding: 2% 5%;
+  max-width: 1200px;
 }

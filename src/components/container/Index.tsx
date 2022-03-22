@@ -3,11 +3,12 @@ import "./container.css";
 
 type Icontainer = {
   children?: Array<JSX.Element> | JSX.Element;
+  className?: string;
 };
-export default function ContainerRow({ children }: Icontainer) {
+export default function ContainerRow({ children, className }: Icontainer) {
   return (
     // eslint-disable-next-line jsx-a11y/aria-role
-    <section className="container-row" role="container-row">
+    <section className={`container-row ${className}`} role="container-row">
       {React.Children.map(children, (item) => {
         return item;
       })}
