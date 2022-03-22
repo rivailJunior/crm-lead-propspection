@@ -44,7 +44,32 @@ body {
   font-size: 15px !important;
 }
 
+.large-text {
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
 hr {
   border-bottom: -0.5px solid var(--default-text-color);
-  width: 40%;
+  width: 80%;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.mt-1 {
+  margin-top: 3px;
+}
+
+.mt-2 {
+  margin-top: 6px;
+}
+
+.mt-3 {
+  margin-top: 9px;
+}
+
+.mt-4 {
+  margin-top: 12px;
 }

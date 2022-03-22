@@ -6,9 +6,13 @@ type IText = {
   onClick?: () => void;
 };
 
-export default function Text({ children, styles, className }: IText) {
+export default function Text({ children, styles, className, onClick }: IText) {
   return (
-    <span className={`text ${className}`} style={styles}>
+    <span
+      className={`text ${className} ${onClick && "clickable"}`}
+      style={styles}
+      onClick={onClick}
+    >
       {children}
     </span>
   );

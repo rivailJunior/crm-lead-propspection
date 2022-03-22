@@ -3,7 +3,7 @@ import "./breadcrumb.css";
 
 type IItem = {
   label: string;
-  onClick: () => void;
+  onClick: (label: string) => void;
   active: boolean;
 };
 type IBreadCrumb = {
@@ -18,7 +18,7 @@ export default function BreadCrumb({ data }: IBreadCrumb) {
         return (
           <Text
             key={index}
-            onClick={item.onClick}
+            onClick={() => item.onClick(item.label)}
             className={item.active ? "active" : "disabled"}
           >
             {label}

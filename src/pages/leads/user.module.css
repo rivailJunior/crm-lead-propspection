@@ -1,8 +1,11 @@
-.userContainer {
+.pageContainer {
   background-color: var(--default-white-color);
   width: 100%;
   box-shadow: var(--box-shadow);
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  align-items: center;
 }
 
 .userContainer {
@@ -15,19 +18,16 @@
   align-items: center;
 }
 
-.card {
-  width: 80%;
-}
-
 .score {
   width: 100%;
-  height: 100px;
-  justify-content: "center";
-  align-items: "center";
-  display: "flex";
-  flex-direction: "row";
   font-size: 60px;
   letter-spacing: 0.5;
+  text-align: center;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {

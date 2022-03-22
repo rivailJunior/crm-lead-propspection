@@ -8,12 +8,29 @@ import {
 } from "../../components/Index";
 import useUserProspection from "../../hooks/useProspection";
 import css from "./user.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Lead() {
+  const navigate = useNavigate();
   const params = useParams();
   const { userData, score, loading } = useUserProspection(params.userid);
 
-  console.log("score", score, userData, loading);
+  const userInformationContent = () => {
+    return (
+      <>
+        <Text className="large-text">{`${userData.name}, ${userData.username}`}</Text>
+        <hr />
+        <Text className="small-text">{userData.email}</Text>
+        <Text className="small-text">{userData.company?.name}</Text>
+        <Text className="small-text">{userData.phone}</Text>
+        <Text className="small-text">{`${userData.address?.street}, ${userData.address?.suite}, ${userData.address?.zipcode}`}</Text>
+      </>
+    );
+  };
+
+  const handleOnClickBreadCrumb = (label: string) => {
+    navigate(`/${label}`);
+  };
 
   return (
     <Container>
@@ -21,9 +38,17 @@ export default function Lead() {
         <div className="box">
           <BreadCrumb
             data={[
-              { label: "home", onClick: () => {}, active: false },
-              { label: "leads", onClick: () => {}, active: false },
-              { label: "lead", onClick: () => {}, active: true },
+              {
+                label: "home",
+                onClick: handleOnClickBreadCrumb,
+                active: false,
+              },
+              {
+                label: "leads",
+                onClick: handleOnClickBreadCrumb,
+                active: false,
+              },
+              { label: "lead", onClick: handleOnClickBreadCrumb, active: true },
             ]}
           />
         </div>
@@ -34,60 +59,38 @@ export default function Lead() {
         </div>
       </ContainerRow>
       <ContainerRow>
-        <div className="box">
-          <div className={css.userContainer}>
-            <ContainerRow>
-              <div className={`box ${css.end}`}>
-                <Card title="" className={`${css.card}`}>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    {loading ? (
-                      "Wait a minute..."
-                    ) : (
-                      <>
-                        <Text
-                          styles={{ fontSize: 20, fontHeight: 700 }}
-                        >{`${userData.name}, ${userData.username}`}</Text>
-                        <hr />
-                        <Text className="small-text">{userData.email}</Text>
-                        <Text className="small-text">
-                          {userData.company?.name}
-                        </Text>
-                        <Text className="small-text">{userData.phone}</Text>
-                        <Text className="small-text">{`${userData.address?.street}, ${userData.address?.suite}, ${userData.address?.zipcode}`}</Text>
-                      </>
-                    )}
-                  </div>
-                </Card>
-              </div>
-            </ContainerRow>
-            <ContainerRow className={css.start}>
-              <div className="box">
-                <Card
-                  title="Checking Judicial Informations"
-                  description="Wait a minute..."
-                  className={`${css.card} `}
-                />
-              </div>
-            </ContainerRow>
-            <ContainerRow className={css.end}>
-              <div className={`box ${css.end}`}>
-                <Card title="Calculating Lead Score" className={`${css.card} `}>
-                  <div>
-                    {loading ? (
-                      "Calulating the lead score"
-                    ) : (
-                      <div className={css.score}>{score}</div>
-                    )}
-                  </div>
-                </Card>
-              </div>
-            </ContainerRow>
-          </div>
+        <div className={css.pageContainer}>
+          <Card title="">
+            <div className={css.cardBody}>
+              {loading ? (
+                <>
+                  <Text>Checking user information...</Text>
+                </>
+              ) : (
+                userInformationContent()
+              )}
+            </div>
+          </Card>
+
+          <Card title="" className={`${css.card} mt-4`}>
+            <Text>
+              {loading ? "Cheking judicial information..." : "No user pendency"}
+            </Text>
+          </Card>
+
+          <Card title="" className={`${css.card} mt-4`}>
+            {loading && !score ? (
+              <Text>Calulating Score...</Text>
+            ) : (
+              <>
+                <Text className="large-text">Score</Text>
+                <hr />
+                <div className={css.score}>
+                  <Text styles={{ fontSize: 70 }}>{`${score}`}</Text>
+                </div>
+              </>
+            )}
+          </Card>
         </div>
       </ContainerRow>
     </Container>
