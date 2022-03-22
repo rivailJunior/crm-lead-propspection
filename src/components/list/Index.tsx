@@ -16,13 +16,18 @@ export default function List({ children }: IList) {
 type IItem = {
   children?: string | JSX.Element;
   onClick?: () => void;
+  className?: string;
 };
 
-export const ListItem = ({ children, onClick }: IItem) => {
+export const ListItem = ({ children, onClick, className }: IItem) => {
   const handleOnClick = onClick || function () {};
   return (
     // eslint-disable-next-line jsx-a11y/aria-role
-    <div role="listItem" className="listItem" onClick={handleOnClick}>
+    <div
+      role="listItem"
+      className={`listItem ${className}`}
+      onClick={handleOnClick}
+    >
       {children}
     </div>
   );

@@ -40,7 +40,11 @@ export default function Leads() {
           <List>
             {users?.map((user, _index) => {
               return (
-                <ListItem key={_index} onClick={() => handleClickUser(user.id)}>
+                <ListItem
+                  className="clickable"
+                  key={_index}
+                  onClick={() => handleClickUser(user.id)}
+                >
                   <Text>{user.name}</Text>
                 </ListItem>
               );
