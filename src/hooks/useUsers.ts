@@ -25,14 +25,14 @@ export interface IUser {
   };
 }
 
-type IUsers = {
+export interface IuseUsers {
   users?: Array<IUser>;
   loading: boolean;
   error: boolean;
-};
+}
 
-export default function useUsers(): IUsers {
-  const [users, setUsers] = useState<Array<IUser> | any>([]);
+export default function useUsers(): IuseUsers {
+  const [users, setUsers] = useState<Array<IUser>>([]);
   const [error, setError] = useState(false);
   useEffect(() => {
     getUsers();
@@ -40,7 +40,7 @@ export default function useUsers(): IUsers {
 
   const getUsers = async () => {
     try {
-      const result = await get<IUsers>("/users", {});
+      const result = await get<IUser[]>("/users", {});
       setUsers(result);
     } catch (error) {
       setError(true);

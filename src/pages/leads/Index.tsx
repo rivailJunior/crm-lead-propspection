@@ -6,13 +6,14 @@ import {
   ListItem,
   Text,
 } from "../../components/Index";
-import useUsers from "../../hooks/useUsers";
 import css from "./leads.module.css";
 import { useNavigate } from "react-router-dom";
+import { UsersContext } from "../../contexts/usersContext";
+import { useContext } from "react";
 
 export default function Leads() {
-  // loading, error,
-  const { users } = useUsers();
+  const { userModel } = useContext(UsersContext);
+  const { users } = userModel;
   const navigate = useNavigate();
   const handleClickUser = (userId: string) => {
     navigate(`/user/${userId}`);

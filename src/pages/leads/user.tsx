@@ -6,12 +6,12 @@ import {
   ContainerRow,
   Text,
 } from "../../components/Index";
-import useProspection from "../../hooks/useProspection";
+import useUserProspection from "../../hooks/useProspection";
 import css from "./user.module.css";
 
 export default function Lead() {
   const params = useParams();
-  const { score, userData } = useProspection(params.userid);
+  const { userData, score } = useUserProspection(params.userid);
 
   console.log("score", score, userData);
 
