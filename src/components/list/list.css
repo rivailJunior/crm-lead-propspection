@@ -1,5 +1,5 @@
 .list {
-  background-color: var(--defualt-white-color);
+  background-color: var(--default-white-color);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,6 @@
   width: 100%;
   min-height: 70px;
   display: flex;
-  background-color: var(--default-white-color);
   justify-content: start;
   align-items: center;
   padding: 10px 10px;
