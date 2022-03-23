@@ -1,4 +1,5 @@
 import "./card.css";
+
 type ICard = {
   title: string | JSX.Element;
   children?: string | JSX.Element;
@@ -7,13 +8,7 @@ type ICard = {
   description?: string | JSX.Element;
 };
 
-export default function Card({
-  title,
-  children,
-  styles,
-  className,
-  description,
-}: ICard) {
+function Card({ title, children, styles, className, description }: ICard) {
   return (
     <div className={`card ${className}`} style={styles}>
       <div className="title">{title}</div>
@@ -28,3 +23,5 @@ type ICardBody = {
 Card.Body = ({ children }: ICardBody) => {
   return <div className="body">{children}</div>;
 };
+
+export default Card;

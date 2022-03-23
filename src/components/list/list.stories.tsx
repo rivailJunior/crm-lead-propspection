@@ -1,21 +1,18 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Text, List, ListItem } from "../Index";
+import Text from "../text/Index";
+import List, { ListItem } from "./Index";
 
 export default {
   title: "Componentes/List",
   component: List,
 } as ComponentMeta<typeof List>;
 
-const Template: ComponentStory<typeof List> = (args) => <List {...args} />;
-
-export const Default = Template.bind({});
-
 const ListChilds = () => {
   const boxItems = Array(9).fill(null);
 
   return (
     <>
-      {boxItems.map((item, id) => {
+      {boxItems.map(() => {
         return (
           <ListItem>
             <Text>
@@ -27,7 +24,12 @@ const ListChilds = () => {
     </>
   );
 };
+const Template: ComponentStory<typeof List> = (args) => (
+  <List>
+    <ListChilds />
+  </List>
+);
 
-Default.args = {
-  children: [<ListChilds />],
-};
+export const Default = Template.bind({});
+
+Default.args = {};
