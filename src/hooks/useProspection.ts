@@ -42,16 +42,16 @@ export default function useUserProspection(
 
   const doUserCheck = useCallback(() => {
     setLoading(true);
-    try {
-      setError(false);
-      Promise.all([getUserJudicialData(), getUserData()]).then(async () => {
+    setError(false);
+    Promise.all([getUserJudicialData(), getUserData()])
+      .then(async () => {
         setLoading(false);
         getScore();
+      })
+      .catch(() => {
+        setLoading(false);
+        setError(true);
       });
-    } catch (e) {
-      setLoading(false);
-      setError(true);
-    }
   }, [getUserData]);
 
   useEffect(() => {
