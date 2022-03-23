@@ -1,10 +1,10 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { LeadList } from ".";
-import { renderWithRouter, everyThingWrapper } from "../../helper/rtl";
-import { usersFixtures } from "../../mocks/users.fixtures";
+import { LeadList } from "..";
+import { renderWithRouter, everyThingWrapper } from "../../../helper/rtl";
+import { usersFixtures } from "../../../mocks/users.fixtures";
 
 import MockAdapter from "axios-mock-adapter";
-import { apiInstance } from "../../service/serviceApi";
+import { apiInstance } from "../../../service/serviceApi";
 
 const axiosMock = new MockAdapter(apiInstance);
 

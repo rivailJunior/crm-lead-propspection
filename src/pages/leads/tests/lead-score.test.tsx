@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { everyThingWrapper } from "../../helper/rtl";
-import LeadScore from "./lead-score";
+import { everyThingWrapper } from "../../../helper/rtl";
+import LeadScore from "../lead-score";
 
-import { usersFixtures } from "../../mocks/users.fixtures";
+import { usersFixtures } from "../../../mocks/users.fixtures";
 
 import MockAdapter from "axios-mock-adapter";
-import { apiInstance } from "../../service/serviceApi";
+import { apiInstance } from "../../../service/serviceApi";
 
 const axiosMock = new MockAdapter(apiInstance);
 
@@ -17,7 +17,7 @@ jest.mock("react-router-dom", () => ({
   useRouteMatch: () => ({ url: "/lead/" }),
 }));
 
-jest.mock("../../utils/random-score.ts", () => {
+jest.mock("../../../utils/random-score.ts", () => {
   return {
     generateFakeScore: () => 61,
   };
