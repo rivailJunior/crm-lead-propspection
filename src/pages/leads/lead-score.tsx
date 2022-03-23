@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 export default function LeadScore() {
   const navigate = useNavigate();
   const params = useParams();
+
   const { userData, score, loading } = useUserProspection(params.userid);
 
   const userInformationContent = () => {
@@ -86,12 +87,12 @@ export default function LeadScore() {
             className={`${css.card} mt-4 ${score >= 60 && "success"}`}
           >
             {loading || !score ? (
-              <Text>Calulating Score...</Text>
+              <Text>Calculating Score...</Text>
             ) : (
               <>
                 <Text className="large-text">Score</Text>
                 <hr />
-                <div className={css.score}>
+                <div className={css.score} role="score">
                   <Text styles={{ fontSize: 70 }}>{`${score}`}</Text>
                 </div>
               </>

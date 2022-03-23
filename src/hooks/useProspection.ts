@@ -36,20 +36,17 @@ export default function useUserProspection(
   };
 
   const getScore = () => {
-    return new Promise((resolve) => {
-      setTimeout(resolve, 3000, generateFakeScore(40, 100));
-    });
+    const scoreValue = generateFakeScore(40, 100);
+    setScore(scoreValue);
   };
 
   const doUserCheck = useCallback(() => {
     setLoading(true);
-
     try {
       setError(false);
       Promise.all([getUserJudicialData(), getUserData()]).then(async () => {
         setLoading(false);
-        const auxScore = await getScore();
-        setScore(auxScore as number);
+        getScore();
       });
     } catch (e) {
       setLoading(false);
@@ -59,13 +56,17 @@ export default function useUserProspection(
 
   useEffect(() => {
     doUserCheck();
+
+    return () => {
+      setLoading(false);
+      setError(false);
+    };
   }, [doUserCheck]);
 
   useEffect(() => {
-    if (score > 60) {
-      updateLeadList(userData.id);
+    if (userData.name) {
     }
-  }, [score]);
+  }, [userData]);
 
   return { userData, score, doUserCheck, loading, error };
 }
