@@ -68,5 +68,21 @@
     "@testing-library/react-hooks": "^7.0.2",
     "axios-mock-adapter": "^1.20.0",
     "webpack": "^5.70.0"
-  }
+  },
+  "collectCoverageFrom": [
+    "src/**/*.{ts,tsx}",
+    "!**/node_modules/**",
+    "!**/src/json/**",
+    "!**/src/**/*.stories.tsx"
+  ],
+  "coveragePathIgnorePatterns": [
+    "react-app-env.d.ts",
+    "reportWebVitals.ts",
+    "index.tsx",
+    "node_modules",
+    ".mock.ts",
+    ".stories.tsx",
+    "images",
+    "models"
+  ]
 }
