@@ -38,4 +38,16 @@ describe("Lead list page", () => {
       expect(window.location.pathname).toBe(path);
     }
   );
+
+  test("should render lead list with prospected leads", async () => {
+    const newLeads = [...usersFixtures];
+    newLeads[2].prospected = true;
+    axiosMock.onGet("/users").reply(200, newLeads);
+    render(<LeadList />, { wrapper: everyThingWrapper });
+    expect(await screen.findByText(usersFixtures[2].name)).toBeInTheDocument();
+    expect(
+      // eslint-disable-next-line testing-library/no-node-access
+      (await screen.findByText(usersFixtures[2].name)).parentNode
+    ).toHaveClass("success");
+  });
 });

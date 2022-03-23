@@ -9,6 +9,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { LeadContext } from "../../contexts/lead-context";
 import { useContext } from "react";
+import { ILead } from "../../hooks/useLead";
 
 export default function Leads() {
   const { userModel } = useContext(LeadContext);
@@ -16,8 +17,9 @@ export default function Leads() {
 
   const navigate = useNavigate();
 
-  const handleClickUser = (userId: string) => {
-    navigate(`/lead/${userId}`);
+  const handleClickUser = (lead: ILead) => {
+    if (lead.prospected) return;
+    navigate(`/lead/${lead.id}`);
   };
 
   return (
@@ -40,14 +42,14 @@ export default function Leads() {
       <ContainerRow>
         <div className="box">
           <List>
-            {users?.map((user, _index) => {
+            {users?.map((lead, _index) => {
               return (
                 <ListItem
-                  className="clickable"
+                  className={`${lead.prospected ? "success" : "clickable"}`}
                   key={_index}
-                  onClick={() => handleClickUser(user.id)}
+                  onClick={() => handleClickUser(lead)}
                 >
-                  <Text>{user.name}</Text>
+                  <Text>{lead.name}</Text>
                 </ListItem>
               );
             })}
