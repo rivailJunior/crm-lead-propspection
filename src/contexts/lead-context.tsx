@@ -1,16 +1,16 @@
 import { createContext } from "react";
-import useUsers, { IuseUsers } from "../hooks/useUsers";
+import useUsers, { IuseLead } from "../hooks/useLead";
 
 type IUsersProviderProps = {
   children: JSX.Element;
 };
 
 type IUserProvider = {
-  userModel: IuseUsers;
+  userModel: IuseLead;
 };
 
 const LeadContext = createContext<IUserProvider>({
-  userModel: {} as IuseUsers,
+  userModel: {} as IuseLead,
 });
 
 export default function LeadProvider({ children }: IUsersProviderProps) {

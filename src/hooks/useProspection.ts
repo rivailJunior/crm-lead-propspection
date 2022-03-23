@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { get } from "../service/request";
 import { generateFakeScore } from "../utils/random-score";
-import { IUser } from "./useUsers";
+import { ILead } from "./useLead";
 
 export interface IuseUserProspectation {
-  userData: IUser;
+  userData: ILead;
   score: number;
   doUserCheck: (userId?: string) => void;
   loading: boolean;
@@ -14,7 +14,7 @@ export interface IuseUserProspectation {
 export default function useUserProspection(
   userId?: string
 ): IuseUserProspectation {
-  const [userData, setUser] = useState<IUser>({} as IUser);
+  const [userData, setUser] = useState<ILead>({} as ILead);
   const [score, setScore] = useState(0);
 
   const [loading, setLoading] = useState(false);
@@ -22,7 +22,7 @@ export default function useUserProspection(
 
   const getUserData = useCallback(async () => {
     if (!userId) return;
-    const result = await get<IUser>(`/users/${userId}`, {});
+    const result = await get<ILead>(`/users/${userId}`, {});
     setUser(result);
   }, [userId]);
 

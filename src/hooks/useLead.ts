@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { get } from "../service/request";
 
-export interface IUser {
+export interface ILead {
   id: string;
   name: string;
   username: string;
@@ -25,14 +25,14 @@ export interface IUser {
   };
 }
 
-export interface IuseUsers {
-  users?: Array<IUser>;
+export interface IuseLead {
+  users?: Array<ILead>;
   loading: boolean;
   error: boolean;
 }
 
-export default function useUsers(): IuseUsers {
-  const [users, setUsers] = useState<Array<IUser>>([]);
+export default function useLeads(): IuseLead {
+  const [users, setUsers] = useState<Array<ILead>>([]);
   const [error, setError] = useState(false);
   useEffect(() => {
     getUsers();
@@ -40,12 +40,13 @@ export default function useUsers(): IuseUsers {
 
   const getUsers = async () => {
     try {
-      const result = await get<IUser[]>("/users", {});
+      const result = await get<ILead[]>("/users", {});
       setUsers(result);
     } catch (error) {
       setError(true);
     }
   };
+
   return {
     users,
     loading: !!users.length,
