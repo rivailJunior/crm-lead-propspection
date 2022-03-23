@@ -97,6 +97,12 @@ export default function LeadScore() {
               </>
             )}
           </Card>
+
+          {score >= 60 && (
+            <Card title="" className="success mt-4">
+              <Text className="large-text">Lead is now prospected!!!</Text>
+            </Card>
+          )}
         </div>
       </ContainerRow>
     </Container>

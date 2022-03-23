@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useContext } from "react";
+import { LeadContext } from "../contexts/lead-context";
 import { get } from "../service/request";
 import { generateFakeScore } from "../utils/random-score";
 import { ILead } from "./useLead";
@@ -14,6 +15,8 @@ export interface IuseUserProspectation {
 export default function useUserProspection(
   userId?: string
 ): IuseUserProspectation {
+  const { userModel } = useContext(LeadContext);
+  const { updateLeadList } = userModel;
   const [userData, setUser] = useState<ILead>({} as ILead);
   const [score, setScore] = useState(0);
 
@@ -57,5 +60,12 @@ export default function useUserProspection(
   useEffect(() => {
     doUserCheck();
   }, [doUserCheck]);
+
+  useEffect(() => {
+    if (score > 60) {
+      updateLeadList(userData.id);
+    }
+  }, [score]);
+
   return { userData, score, doUserCheck, loading, error };
 }

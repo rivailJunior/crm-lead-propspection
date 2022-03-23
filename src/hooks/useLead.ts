@@ -6,6 +6,7 @@ export interface ILead {
   name: string;
   username: string;
   email: string;
+  prospected?: boolean;
   address: {
     street: string;
     suite: string;
@@ -29,6 +30,7 @@ export interface IuseLead {
   users?: Array<ILead>;
   loading: boolean;
   error: boolean;
+  updateLeadList: (leadId: string) => void;
 }
 
 export default function useLeads(): IuseLead {
@@ -47,9 +49,17 @@ export default function useLeads(): IuseLead {
     }
   };
 
+  const updateLeadList = (leadId: string) => {
+    const updatedLeads = users.map((lead) => {
+      return lead.id === leadId ? { ...lead, prospected: true } : lead;
+    });
+    setUsers(updatedLeads);
+  };
+
   return {
     users,
     loading: !!users.length,
     error,
+    updateLeadList,
   };
 }

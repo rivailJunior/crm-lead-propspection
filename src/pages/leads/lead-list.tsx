@@ -13,10 +13,13 @@ import { useContext } from "react";
 export default function Leads() {
   const { userModel } = useContext(LeadContext);
   const { users } = userModel;
+
   const navigate = useNavigate();
+
   const handleClickUser = (userId: string) => {
     navigate(`/lead/${userId}`);
   };
+
   return (
     <Container>
       <ContainerRow>
