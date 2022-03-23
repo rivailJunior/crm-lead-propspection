@@ -6,7 +6,6 @@ import { usersFixtures } from "../../mocks/users.fixtures";
 
 import MockAdapter from "axios-mock-adapter";
 import { apiInstance } from "../../service/serviceApi";
-import { generateFakeScore } from "../../utils/random-score";
 
 const axiosMock = new MockAdapter(apiInstance);
 
