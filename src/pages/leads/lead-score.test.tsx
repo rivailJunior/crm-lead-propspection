@@ -29,6 +29,7 @@ describe("Lead Score Page with data", () => {
 
     render(<LeadScore />, { wrapper: everyThingWrapper });
 
+    expect(screen.getByText(/Lead Prospection Pipe/i)).toBeInTheDocument();
     expect(
       screen.getByText(/Checking user information.../i)
     ).toBeInTheDocument();

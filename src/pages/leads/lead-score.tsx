@@ -56,7 +56,7 @@ export default function LeadScore() {
       </ContainerRow>
       <ContainerRow>
         <div className="box">
-          <Text className="large-text">Leads</Text>
+          <Text className="large-text">Lead Prospection Pipe</Text>
         </div>
       </ContainerRow>
       <ContainerRow>
