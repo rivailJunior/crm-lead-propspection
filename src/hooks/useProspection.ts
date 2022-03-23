@@ -64,9 +64,10 @@ export default function useUserProspection(
   }, [doUserCheck]);
 
   useEffect(() => {
-    if (userData.name) {
+    if (score >= 60) {
+      updateLeadList(userData.id);
     }
-  }, [userData]);
+  }, [score]);
 
   return { userData, score, doUserCheck, loading, error };
 }

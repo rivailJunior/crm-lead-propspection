@@ -14,6 +14,8 @@ export default function Leads() {
   const { userModel } = useContext(LeadContext);
   const { users } = userModel;
 
+  console.log("users", users);
+
   const navigate = useNavigate();
 
   const handleClickUser = (userId: string) => {
