@@ -79,6 +79,7 @@
     "react-app-env.d.ts",
     "reportWebVitals.ts",
     "index.tsx",
+    "App.tsx",
     "node_modules",
     ".mock.ts",
     ".stories.tsx",
