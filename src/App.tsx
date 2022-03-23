@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { Header } from "./components/Index";
-import UsersProvider from "./contexts/usersContext";
+import LeadProvider from "./contexts/lead-context";
 import PageRoutes from "./routes/Index";
 
 function App() {
@@ -8,9 +8,9 @@ function App() {
     <div role="app" className="App">
       <Header />
       <BrowserRouter>
-        <UsersProvider>
+        <LeadProvider>
           <PageRoutes />
-        </UsersProvider>
+        </LeadProvider>
       </BrowserRouter>
     </div>
   );

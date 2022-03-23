@@ -9,16 +9,16 @@ type IUserProvider = {
   userModel: IuseUsers;
 };
 
-const UsersContext = createContext<IUserProvider>({
+const LeadContext = createContext<IUserProvider>({
   userModel: {} as IuseUsers,
 });
 
-export default function UsersProvider({ children }: IUsersProviderProps) {
+export default function LeadProvider({ children }: IUsersProviderProps) {
   return (
-    <UsersContext.Provider value={{ userModel: useUsers() }}>
+    <LeadContext.Provider value={{ userModel: useUsers() }}>
       {children}
-    </UsersContext.Provider>
+    </LeadContext.Provider>
   );
 }
 
-export { UsersContext };
+export { LeadContext };

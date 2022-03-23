@@ -8,15 +8,15 @@ import {
 } from "../../components/Index";
 import css from "./leads.module.css";
 import { useNavigate } from "react-router-dom";
-import { UsersContext } from "../../contexts/usersContext";
+import { LeadContext } from "../../contexts/lead-context";
 import { useContext } from "react";
 
 export default function Leads() {
-  const { userModel } = useContext(UsersContext);
+  const { userModel } = useContext(LeadContext);
   const { users } = userModel;
   const navigate = useNavigate();
   const handleClickUser = (userId: string) => {
-    navigate(`/user/${userId}`);
+    navigate(`/lead/${userId}`);
   };
   return (
     <Container>
@@ -32,7 +32,7 @@ export default function Leads() {
       </ContainerRow>
       <ContainerRow>
         <div className="box">
-          <Text className={css.textLeads}>Leads</Text>
+          <Text className={css.textLeads}>Lead User List</Text>
         </div>
       </ContainerRow>
       <ContainerRow>
