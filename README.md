@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Ui
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To help me in develop this project I created the ui using figma, and this is the four pages to this project.
 
-## Available Scripts
+this is the link to access figma page: https://www.figma.com/file/N5VTbsCMUHSvO6p68FbY38/Lead-Users-Home?node-id=0%3A1
 
-In the project directory, you can run:
+![Screenshot from 2022-03-23 19-08-24](https://user-images.githubusercontent.com/5783143/159811192-5fd1733b-6fbe-4031-a60c-5e63b30ceaf0.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Screenshot from 2022-03-23 19-08-39](https://user-images.githubusercontent.com/5783143/159811238-f858c020-3ff5-4fc8-95f5-9f01c713f06d.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# structure 
 
-### `npm test`
+This project contains the following architecture structue.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Screenshot from 2022-03-23 19-17-35](https://user-images.githubusercontent.com/5783143/159812006-8754e721-21ee-45da-88a3-7b28d5626666.png)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Run the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+download this project and run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`yarn`
 
-### `npm run eject`
+and 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`yarn start`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Run tests
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`ỳarn tests`
 
-## Learn More
+# Run storybook
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`yarn storybook`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
