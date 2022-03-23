@@ -67,6 +67,7 @@ export default function useUserProspection(
     if (score >= 60) {
       updateLeadList(userData.id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [score]);
 
   return { userData, score, doUserCheck, loading, error };
