@@ -6,7 +6,6 @@ import {
   ListItem,
   Text,
 } from "../../components/Index";
-import css from "./leads.module.css";
 import { useNavigate } from "react-router-dom";
 import { LeadContext } from "../../contexts/lead-context";
 import { useContext } from "react";
@@ -32,7 +31,7 @@ export default function Leads() {
       </ContainerRow>
       <ContainerRow>
         <div className="box">
-          <Text className={css.textLeads}>Lead User List</Text>
+          <Text className="large-text">Lead User List</Text>
         </div>
       </ContainerRow>
       <ContainerRow>

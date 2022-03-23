@@ -6,6 +6,7 @@
   flex-direction: column;
   padding: 3%;
   align-items: center;
+  margin: 15px;
 }
 
 .userContainer {

@@ -16,6 +16,7 @@ export default function useUserProspection(
 ): IuseUserProspectation {
   const [userData, setUser] = useState<IUser>({} as IUser);
   const [score, setScore] = useState(0);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -27,18 +28,25 @@ export default function useUserProspection(
 
   const getUserJudicialData = () => {
     return new Promise((resolve) => {
-      setTimeout(resolve, 3000, false);
+      setTimeout(resolve, 1000, false);
+    });
+  };
+
+  const getScore = () => {
+    return new Promise((resolve) => {
+      setTimeout(resolve, 3000, generateFakeScore(40, 100));
     });
   };
 
   const doUserCheck = useCallback(() => {
     setLoading(true);
+
     try {
       setError(false);
-      Promise.all([getUserJudicialData(), getUserData()]).then(() => {
-        const score = generateFakeScore(40, 100);
-        setScore(score);
+      Promise.all([getUserJudicialData(), getUserData()]).then(async () => {
         setLoading(false);
+        const auxScore = await getScore();
+        setScore(auxScore as number);
       });
     } catch (e) {
       setLoading(false);

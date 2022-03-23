@@ -55,12 +55,12 @@ export default function LeadScore() {
       </ContainerRow>
       <ContainerRow>
         <div className="box">
-          <Text className={css.textLeads}>Leads</Text>
+          <Text className="large-text">Leads</Text>
         </div>
       </ContainerRow>
       <ContainerRow>
         <div className={css.pageContainer}>
-          <Card title="">
+          <Card title="" className={`${!loading && "success"}`}>
             <div className={css.cardBody}>
               {loading ? (
                 <>
@@ -72,14 +72,20 @@ export default function LeadScore() {
             </div>
           </Card>
 
-          <Card title="" className={`${css.card} mt-4`}>
+          <Card
+            title=""
+            className={`${css.card} mt-4 ${!loading && "success"}`}
+          >
             <Text>
               {loading ? "Cheking judicial information..." : "No user pendency"}
             </Text>
           </Card>
 
-          <Card title="" className={`${css.card} mt-4`}>
-            {loading && !score ? (
+          <Card
+            title=""
+            className={`${css.card} mt-4 ${score >= 60 && "success"}`}
+          >
+            {loading || !score ? (
               <Text>Calulating Score...</Text>
             ) : (
               <>
