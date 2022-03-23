@@ -8,6 +8,7 @@ export default function PageRoutes() {
     <Routes>
       <Route element={<Header />}>
         <Route path="/" element={<LeadList />} />
+        <Route path="/home" element={<LeadList />} />
         <Route path="/leads" element={<LeadList />} />
         <Route path="/lead/:userid" element={<LeadScore />} />
 
