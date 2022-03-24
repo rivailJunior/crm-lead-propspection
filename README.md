@@ -26,6 +26,8 @@ and
 
 `yarn start`
 
+or you can check at this link: https://crm-lead-propspection.vercel.app/
+
 
 # Run tests
 
